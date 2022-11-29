@@ -48,13 +48,15 @@ jobs:
            echo "${{ env.pythonLocation }}"
            pip install -r requirements.txt
            pip list -v
+           ls -l ${{ env.pythonLocation }}
+           ls -l ${{ env.pythonLocation }}/bin
            
            
       - name: docker build
         run: |
             export DOCKER_BUILDKIT=1
             DOCKER_BUILDKIT=1 docker build --tag musicbox:1.0 --build-arg BUILDKIT_INLINE_CACHE=1 \
-            --progress=plain -v ${{ env.pythonLocation }}/lib/python3.11/:/usr/local/lib/python3.11/ -f Conatinerfile .
+            --progress=plain -v ${{ env.pythonLocation }}/lib:/usr/local/lib -f Conatinerfile .
 
 
 
