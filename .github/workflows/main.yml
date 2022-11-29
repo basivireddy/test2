@@ -50,6 +50,7 @@ jobs:
            pip list -v
            ls -l ${{ env.pythonLocation }}
            ls -l ${{ env.pythonLocation }}/bin
+           docker build --help
            
            
       - name: docker build
