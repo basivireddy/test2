@@ -47,7 +47,6 @@ jobs:
            pwd
            echo "${{ env.pythonLocation }}"
            pip install -r requirements.txt
-           ls -alg /root/.cache/pip
            pip list -v
            
            
