@@ -57,6 +57,7 @@ jobs:
         run: |
             ls -l ${{ env.pythonLocation }}/lib/python3.11/site-packages
             cp -r ${{ env.pythonLocation }}/lib/python3.11/site-packages site-packages
+            ls -la
             export DOCKER_BUILDKIT=1
             DOCKER_BUILDKIT=1 docker build --tag musicbox:1.0 --build-arg BUILDKIT_INLINE_CACHE=1 \
             --progress=plain --build-arg pythonLocation=site-packages -f Conatinerfile .
