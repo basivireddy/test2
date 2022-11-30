@@ -7,7 +7,7 @@ ADD requirements.txt /code/
 ARG pythonLocation=/opt/test
 
 RUN echo $pythonLocation
-RUN --mount=target=/usr/local/lib/python3.11/site-packages,type=bind,source=$pythonLocation \ 
+RUN --mount=target=/usr/local/lib/python3.11/site-packages,type=bind,source=./$pythonLocation \ 
      pip install -r requirements.txt
 #RUN --mount=target=/usr/local/lib/python3.11/site-packages,type=bind,source=/opt/hostedtoolcache/Python/3.11.0/x64/lib/python3.11/site-packages
 #RUN pip install -r requirements.txt
