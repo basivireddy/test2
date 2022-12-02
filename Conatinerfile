@@ -8,7 +8,7 @@ ADD requirements.txt /code/
 # COPY site-packages /usr/local/lib/python3.11/site-packages
 RUN pip install --user -r requirements.txt
 ADD . /code/
-RUN pip install --user .
+
 
 
 FROM python:3.11 AS build-image
