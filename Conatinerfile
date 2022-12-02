@@ -15,6 +15,7 @@ FROM python:3.11 AS build-image
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
-COPY --from=compile-image /code/.local /code/.local
+COPY --from=compile-image /root/.local /root/.local
+COPY --from=compile-image /code/ /code/
 EXPOSE 8000
 CMD ["python3","manage.py","runserver","0.0.0.0:8000"]
