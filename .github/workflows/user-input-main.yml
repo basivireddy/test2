@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     name: ci
     needs: [build]
-    timeout-minutes: 1
+    #timeout-minutes: 1
     environment: sit
 
     # Steps represent a sequence of tasks that will be executed as part of the job
